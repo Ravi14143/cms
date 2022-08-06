@@ -1,8 +1,14 @@
 <?php
-  $conn=mysqli_connect("remotemysql.com","iPxJWxHgpd","eY9bRPcgPy");
-  $db=mysqli_select_db($conn,"iPxJWxHgpd");
-  if(!$conn){
-      echo "<script>alert('connection failed');</script>";
-  }
+$servername = "remotemysql.com";
+$username = "iPxJWxHgpd";
+$password = "iPxJWxHgpd";
 
+// Create connection
+$conn = new mysqli($servername, $username, $password);
+
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected successfully";
 ?>
